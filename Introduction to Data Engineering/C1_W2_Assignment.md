@@ -68,18 +68,18 @@ Run the command in the VSCode terminal. If necessary, open a
 new terminal by selecting Terminal > New Terminal from the menu.
 
 ``` bash
-aws rds describe-db-instances --db-instance-identifier <MySQL-DB-name> --output text --query "DBInstances[].Endpoint.Address"
+aws rds describe-db-instances --db-instance-identifier 'de-c1w2-rds' --output text --query "DBInstances[].Endpoint.Address"
 ```
 
 2.2. Now connect to the database by running the following command, replacing
-- `<MySQLEndpoint>` with the output from the previous step,
+- `<MySQLEndpoint>` with the output from the previous step, de-c1w2-rds.cdskcuu2uk13.us-east-1.rds.amazonaws.com
 
 - `<DatabaseUserName>` with `admin` ,
 
 - `<Password>` with `adminpwrd` :
 
 ``` bash
-mysql --host=<MySQLEndpoint> --user=<DatabaseUserName> --password=<Password> --port=3306
+mysql --host=de-c1w2-rds.cdskcuu2uk13.us-east-1.rds.amazonaws.com --user='admin' --password='adminpwrd' --port=3306
 ```
 
 2.3. After you have established the connection to the RDS instance, you can check 
